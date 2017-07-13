@@ -27,7 +27,7 @@ var blogSchema = new mongoose.Schema({
 
 var Blog = mongoose.model("Blog", blogSchema);
 
-//         Crear las rutas RESTFULL de la página
+//         Crear las rutas RESTful de la página
 
 // INDEX ROUTE
 app.get("/", function(req, res){
@@ -35,7 +35,7 @@ app.get("/", function(req, res){
 });
 
 app.get("/blogs", function(req, res){
-    
+
     //Get all the camps from the db
     Blog.find({}, function(err, allblogs){
         if(err) {
@@ -53,7 +53,7 @@ app.get("/blogs/new", function(req, res){
 
 // CREATE ROUTE
 app.post("/blogs", function(req, res){
-    // evitar que ocupen scripts en la aprte de escribir el blog
+    // Evitar que ocupen scripts en la parte de escribir el blog
     req.body.body = req.sanitize(req.body.body);
 
     // Crear el constructor que generará los posts y los guarda en la db
@@ -69,12 +69,12 @@ app.post("/blogs", function(req, res){
             res.redirect("/blogs");
         }
     });
-   
+
 });
 
 // SHOW ROUTE
 app.get("/blogs/:id", function(req, res){
-    
+
     Blog.findById(req.params.id, function(err, foundBlog){
         if(err) {
             console.log(err);
@@ -82,7 +82,7 @@ app.get("/blogs/:id", function(req, res){
             res.render("show", {blog: foundBlog});
         }
     });
-    
+
 });
 
 // EDIT ROUTE
