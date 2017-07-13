@@ -1,0 +1,17 @@
+<% include partials/head %>
+
+<div class="container">
+    <h2><%= blog.title %></h2>
+    <img class="img-thumbnail img-responsive" src="<%= blog.img %>">
+    <p class="lead"><%- blog.body %></p>
+    <span><%= blog.created.toDateString() %></span>
+    <div class="row show-buttons_container">
+        <a class="btn btn-success" href="/blogs/<%= blog._id %>/edit">Edit</a>
+        <form action="/blogs/<%= blog._id %>?_method=DELETE" method="post">
+            <button class="btn btn-danger">Delete</button>
+        </form>
+    </div>
+</div>
+
+
+<% include partials/foot %>

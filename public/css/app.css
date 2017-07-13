@@ -1,0 +1,16 @@
+.thumbnail>.main-post_img {
+    height: 189px;
+}
+
+.container .img-thumbnail {
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    display: block;
+}
+.show-buttons_container {
+    margin-top: 30px;
+}
+.show-buttons_container form {
+    display: inline-block;
+}
